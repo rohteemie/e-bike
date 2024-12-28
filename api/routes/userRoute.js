@@ -1,0 +1,28 @@
+const express = require("express")
+const route = express.Router()
+const userController = require("../controllers/userController")
+
+route.get("/", userController.getAllUser)
+route.post("/signup", userController.createUser)
+route.post("/login", userController.loginUser)
+route.post("/get-user", userController.getUserByEmail)
+route.post("/delete-user", userController.DeleteUser)
+route.post("/create-notification", userController.CreateNotifications)
+route.get("/get-notifications/:id", userController.getNotifications)
+route.post("/confirm-otp", userController.verifyCode)
+route.patch("/update", userController.UpdateUser)
+route.post("/reviews", userController.createReview)
+route.get("/reviews", userController.getallReviews)
+route.get("/bike-reviews", userController.getbikesReviews)
+route.post("/request-otp", userController.requestCode)
+route.post("/request-password-reset", userController.requestPasswordCode)
+route.post("/confirm-password-reset", userController.verifyPasswordReset)
+route.post("/admin-login", userController.loginAdmin)
+route.post("/admin-signup", userController.createAdmin)
+route.post("/admin-update", userController.UpdateAdmin)
+route.post("/create-rental-settings", userController.createRentalSetting)
+route.post("/update-rental-settings", userController.UpdateRental)
+route.post("/get-rental-settings", userController.getRentalSettings)
+
+
+module.exports = route
